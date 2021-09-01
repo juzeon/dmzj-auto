@@ -1,0 +1,21 @@
+{
+  "name": "dmzj-auto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sign": "ts-node src/sign.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^16.7.10",
+    "@types/qs": "^6.9.7",
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "qs": "^6.10.1",
+    "ts-node": "^10.2.1"
+  }
+}
