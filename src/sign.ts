@@ -1,4 +1,4 @@
-import {appAxios, login} from "./includes"
+import {appAxios, login, sleep} from "./includes"
 import * as qs from 'qs'
 import {LogHandler} from "./LogHandler"
 
@@ -9,6 +9,7 @@ import {LogHandler} from "./LogHandler"
     if (resp.data.code !== 0) {
         logHandler.addLog(resp.data.msg)
     }
+    await sleep(5000)
     resp = await appAxios.get('http://nnv3api.dmzj1.com/task/video_sign?' + qs.stringify(userAuth))
     if (resp.data.code !== 0) {
         logHandler.addLog(resp.data.msg)
