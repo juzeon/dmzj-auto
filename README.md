@@ -8,10 +8,12 @@
 
 ```bash
 # 安装依赖
-npm i typescript -g
 npm i
 
-# 每日签到
-npm run sign
+# 每日任务
+npm run daily
+
+# 每周任务
+npm run weekly
 ```
 
