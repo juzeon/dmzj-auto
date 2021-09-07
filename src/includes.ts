@@ -1,13 +1,17 @@
-import axios from "axios"
+import axios, {AxiosResponse} from "axios"
 import * as qs from 'qs'
 import {IUserAuth} from "./types"
 import {appConfig} from "./config"
+import {LogHandler} from "./LogHandler"
 
 let appAxios = axios.create({
     transformResponse: (data) => {
         try {
-            return JSON.parse(data)
+            let json = JSON.parse(data)
+            console.log(json)
+            return json
         } catch (e) {
+            console.log(data)
             return data
         }
     },
@@ -28,10 +32,16 @@ export async function login() {
     }
 }
 
-export function sleep(ms: number) {
+export function sleep() {
     return new Promise((resolve) => {
-        setTimeout(resolve, ms)
+        setTimeout(resolve, appConfig.sleep)
     })
+}
+
+export function handleResponse(resp: AxiosResponse, logHandler: LogHandler) {
+    if (resp.data.code !== 0) {
+        logHandler.addLog(resp.data.msg)
+    }
 }
 
 export {appAxios}
