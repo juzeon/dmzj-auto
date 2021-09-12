@@ -22,7 +22,7 @@ let appAxios = axios.create({
 })
 
 export async function login() {
-    let resp = await appAxios.post('https://nnuser.dmzj1.com/loginV2/m_confirm', qs.stringify({
+    let resp = await appAxios.post('https://nnuser.muwai.com/loginV2/m_confirm', qs.stringify({
         nickname: appConfig.username,
         passwd: appConfig.password
     }))

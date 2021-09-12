@@ -11,19 +11,19 @@ import {AxiosResponse} from "axios"
 
     // 看视频*3
     for (let i of [0, 1, 2]) {
-        resp = await appAxios.get('http://nnapi.dmzj1.com/dynamic/video?' + qs.stringify(userAuth))
+        resp = await appAxios.get('http://nnapi.muwai.com/dynamic/video?' + qs.stringify(userAuth))
         handleResponse(resp, logHandler)
         await sleep()
-        resp = await appAxios.get('http://nnv3api.dmzj1.com/task/get_reward?' + qs.stringify({...userAuth, id: 11}))
+        resp = await appAxios.get('http://nnv3api.muwai.com/task/get_reward?' + qs.stringify({...userAuth, id: 11}))
         handleResponse(resp, logHandler)
         await sleep()
     }
 
     // 分享
-    resp = await appAxios.get('http://nnapi.dmzj1.com/dynamic/share?' + qs.stringify(userAuth))
+    resp = await appAxios.get('http://nnapi.muwai.com/dynamic/share?' + qs.stringify(userAuth))
     handleResponse(resp,logHandler)
     await sleep()
-    resp = await appAxios.get('http://nnv3api.dmzj1.com/task/get_reward?' + qs.stringify({...userAuth, id: 12}))
+    resp = await appAxios.get('http://nnv3api.muwai.com/task/get_reward?' + qs.stringify({...userAuth, id: 12}))
     handleResponse(resp, logHandler)
     await sleep()
 
